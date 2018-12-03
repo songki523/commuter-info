@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scraper</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script type="text/javascript">
+	// function success() {
+	// 	console.log("done");
+	// }
+	// function failed(err,msg) {
+	// 	console.log("failed: " + msg)
+	// }
+	// $.ajax({
+	// 	url: "http://www.marctracker.com/PublicView/status.jsp",
+	// 	//context: document.body,
+	// 	type: "GET",
+	// 	//crossDomain: true,
+	// 	//origin: "http://github.com",
+	// 	//headers: {"Access-Control-Allow-Origin": "*" },
+	// 	beforeSend: function(xhr){xhr.setRequestHeader('Access-Control-Allow-Origin', '*');}
+	// }).done(success).fail(failed);
+
+	var invocation = new XMLHttpRequest();
+	var url = 'http://www.marctracker.com/PublicView/status.jsp';
+	   
+	function callOtherDomain() {
+	  if(invocation) {    
+	    invocation.open('GET', url, true);
+	    invocation.onreadystatechange = handler;
+	    invocation.send(); 
+	  }
+	}
+</script>
+</body>
+</html>
