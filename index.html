@@ -32,7 +32,10 @@
 	function callOtherDomain() {
 	  if(invocation) {    
 	    invocation.open('GET', url, true);
-	    invocation.onreadystatechange = handler;
+	    invocation.onreadystatechange = function () {
+		  if(invocation.readyState === 4 && invocation.status === 200) {
+		    console.log(invocation.responseText);
+		  };
 	    invocation.send(); 
 	  }
 	}
